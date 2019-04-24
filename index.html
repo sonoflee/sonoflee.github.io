@@ -18,7 +18,7 @@ var newData = data.slice(0);
 newData.sort(function(a, b) {
   var dateA = new Date(a['Submission Date']);
   var dateB = new Date(b['Submission Date']);
-  return dateA - dateB;
+  return dateB - dateA;
 });
 
 console.log(newData);	
