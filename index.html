@@ -5,7 +5,10 @@ function init() {
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1TcRNXylAdP2bI7iVr9FTvMksrdx8Q5aPLTeExhIyryM/';
 Tabletop.init( { key: publicSpreadsheetUrl,
 callback: showInfo,
-simpleSheet: true } )
+simpleSheet: true,
+order: 'submissiondate',	       
+reverse: true,
+} )
 }
 
 function showInfo(data, tabletop) {
@@ -65,7 +68,8 @@ border-bottom: 1px solid gray;
 margin-bottom: 10px;
 }
 form {}
-textarea{ width: 100%;
+textarea{ 
+width: 100%;
 border-radius: 5px;
 border: 1px #00274c solid;
 }
@@ -75,7 +79,7 @@ text-align: center;
 margin-bottom: 10px;}
 
 button[type=submit] {
-border-radius: 5px; /* Rounded button edges */
+border-radius: 5px; 
 border: 1px #00274c solid;
 }
 	
