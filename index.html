@@ -13,15 +13,15 @@ reverse: true
 
 function showInfo(data, tabletop) {
 console.log(data);
-//const newData = [data].sort();
-var newData = data.slice(0);
-newData.sort(function(a, b) {
+/* reorder so new entries are first */		
+//var newData = data.slice(0);
+data.sort(function(a, b) {
   var dateA = new Date(a['Submission Date']);
   var dateB = new Date(b['Submission Date']);
   return dateB - dateA;
 });
 
-console.log(newData);	
+//console.log(newData);	
 	
 	for (var i = 0; i < data.length; i++) {
 		$('.post').append(
