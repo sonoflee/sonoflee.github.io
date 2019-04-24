@@ -13,6 +13,9 @@ reverse: true
 
 function showInfo(data, tabletop) {
 console.log(data);
+const newData = [data].sort();
+console.log(newData);	
+	
 	for (var i = 0; i < data.length; i++) {
 		$('.post').append(
 		'<div class="article">' +
