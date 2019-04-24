@@ -15,8 +15,8 @@ function showInfo(data, tabletop) {
 console.log(data);
 const newData = [data].sort();	
 newData.sort(function compare(a, b) {
-  var dateA = new Date(a.'Submission Date');
-  var dateB = new Date(b.'Submission Date');
+  var dateA = new Date(a['Submission Date']);
+  var dateB = new Date(b['Submission Date']);
   return dateA - dateB;
 });
 
