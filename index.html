@@ -15,11 +15,19 @@ function showInfo(data, tabletop) {
 console.log(data);
 /* reorder so new entries are first */		
 //var newData = data.slice(0);
+
+/*
 data.sort(function compare(a, b) {
   var dateA = new Date(a['Submission Date']);
   var dateB = new Date(b['Submission Date']);
   return dateB - dateA;
 });
+*/
+data.sort(function compare(a, b) {
+  var dateA = Ext.Date.parse(a['Submission Date'], "Y-m-d H:i:s");
+  var dateB = Ext.Date.parse(b['Submission Date'], "Y-m-d H:i:s");
+  return dateB - dateA;
+});	
 
 //console.log(newData);	
 	
