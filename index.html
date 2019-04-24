@@ -66,13 +66,16 @@ margin-bottom: 10px;
 }
 form {}
 textarea{ width: 100%;
-border-radius: 50px;
+border-radius: 5px;
 border: 1px #00274c solid;
 }
+.button-wrap {
+width: 100%;
+text-align: center;
+margin-bottom: 10px;}
+
 button[type=submit] {
-border-radius: 50px; /* Rounded button edges */
-width: 100px; /* Width and height must match */
-height: 100px;
+border-radius: 5px; /* Rounded button edges */
 border: 1px #00274c solid;
 }
 	
@@ -89,8 +92,10 @@ border: 1px #00274c solid;
 <p>Write your personal experience or reflection here:</p>
 
 <textarea id="input_3" class="form-textarea" name="q3_text" cols="40" rows="6" data-component="textarea"></textarea> 
-
+	
+<div class="button-wrap">
 <button id="input_2" type="submit" class="form-submit-button" data-component="button">Submit</button>
+</div>
 </form>
 	
 	
