@@ -13,7 +13,8 @@ reverse: true
 
 function showInfo(data, tabletop) {
 console.log(data);
-const newData = [data].sort();	
+//const newData = [data].sort();
+var newData = data.slice(0);
 newData.sort(function(a, b) {
   var dateA = new Date(a['Submission Date']);
   var dateB = new Date(b['Submission Date']);
