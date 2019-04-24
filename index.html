@@ -1,17 +1,25 @@
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>    
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1TcRNXylAdP2bI7iVr9FTvMksrdx8Q5aPLTeExhIyryM/';
+function init() {
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1TcRNXylAdP2bI7iVr9FTvMksrdx8Q5aPLTeExhIyryM/';
+Tabletop.init( { key: publicSpreadsheetUrl,
+callback: showInfo,
+simpleSheet: true } )
+}
 
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+function showInfo(data, tabletop) {
+console.log(data);
+	for (var i = 0; i < data.length; i++) {
+		$(‘.post’).append(
+		‘<div class=”article”>’ +
+		‘<div class=”text”>’ +
+		‘<p>’ + data[i].text + ‘</p>’+
+		‘</div> ‘+
+		‘<div class=”date”>’ + data[i].date + ‘</div>’ +
+		‘</div>’);
+	}
+}
+window.addEventListener(‘DOMContentLoaded’, init)
 
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
-
-  window.addEventListener('DOMContentLoaded', init)
-</script>
+<body>
+<div class=”post”>
+</div>
+</body>
