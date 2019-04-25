@@ -15,7 +15,7 @@ reverse: true
 function showInfo(data, tabletop) {
 console.log(data);
 /* reorder so new entries are first */		
-//var newData = data.slice(0);
+var newData = data.slice(0);
 
 
 data.sort(function compare(a, b) {
@@ -25,7 +25,13 @@ data.sort(function compare(a, b) {
 });
 	
 
-//console.log(newData);	
+newData.sort(function compare(a, b) {
+	var dateA = moment(a['Submission Date']);
+  	var dateB = moment(b['Submission Date']);
+  return dateB - dateA;
+});
+console.log(newData);	
+	
 	
 	for (var i = 0; i < data.length; i++) {
 		$('.post').append(
