@@ -15,22 +15,23 @@ reverse: true
 function showInfo(data, tabletop) {
 console.log(data);
 /* reorder so new entries are first */		
-var newData = data.slice(0);
 
 
+/*
 data.sort(function compare(a, b) {
   var dateA = new Date(a['Submission Date']);
   var dateB = new Date(b['Submission Date']);
   return dateB - dateA;
 });
-	
+*/	
+/*var newData = data.slice(0);*/
 
-newData.sort(function compare(a, b) {
+data.sort(function compare(a, b) {
 	var dateA = moment(a['Submission Date'], "M-DD-YYYY HH:mm:ss");
   	var dateB = moment(b['Submission Date'], "M-DD-YYYY HH:mm:ss");
   return dateB - dateA;
 });
-console.log(newData);	
+//console.log(newData);	
 	
 	
 	for (var i = 0; i < data.length; i++) {
